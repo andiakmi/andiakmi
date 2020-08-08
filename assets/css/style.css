@@ -10,6 +10,20 @@ a:hover {
   text-decoration: none;
 }
 
+.back-to-top {
+  animation: 1.6s asd infinite;
+}
+@keyframes asd {
+  0% {
+    position: relative;
+    bottom: -10px;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+  }
+}
+
 .section-title::after {
   position: absolute;
   content: "";

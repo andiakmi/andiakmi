@@ -1,19 +1,15 @@
-$(function () {
-  let lastYPos = 0;
+let lastYPos = 0;
+const nav = document.querySelector("nav.navbar");
+window.addEventListener("scroll", () => {
+  const yPos = window.scrollY;
 
-  const nav = $("nav.navbar");
+  if (yPos > 35.1 && yPos > lastYPos) {
+    nav.classList.add("hide");
+  } else {
+    nav.classList.remove("hide");
+  }
 
-  window.addEventListener("scroll", () => {
-    const yPos = window.scrollY;
-
-    if (yPos > 35.1 && yPos > lastYPos) {
-      nav.addClass("hide");
-    } else {
-      nav.removeClass("hide");
-    }
-
-    lastYPos = yPos;
-  });
+  lastYPos = yPos;
 });
 
 const menuBtn = document.querySelector(".menu-btn");

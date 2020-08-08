@@ -9,3 +9,25 @@ header.root-jumbotron .content {
     font-size: 1.1rem;
   }
 }
+
+.intro h1 {
+  animation: 0.8s intro;
+}
+.intro p {
+  animation: 1.4s intro;
+}
+.intro div {
+  animation: 2s intro;
+}
+@keyframes intro {
+  0% {
+    position: relative;
+    bottom: -10px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+    opacity: 1;
+  }
+}
