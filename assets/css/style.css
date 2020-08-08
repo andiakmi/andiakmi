@@ -1,0 +1,143 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fefefe;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 50px;
+  background: #000;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+.progress {
+  background: transparent;
+}
+.progress,
+.progress-bar {
+  height: 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.progress-bar {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Component: Button */
+.btn.animate {
+  transform: translateY(0);
+  transition: 0.2s transform ease, 0.1s box-shadow ease;
+}
+.btn.animate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 3px #0000000e;
+}
+
+/* Component: NavBar */
+.nav-wrapper {
+  height: 58.6px;
+}
+.navbar {
+  transition: 0.3s transform ease-in-out;
+}
+.navbar.hide {
+  transform: translateY(-58.6px);
+}
+nav.navbar {
+  background: rgba(255, 255, 255, 0.856);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+nav.navbar .nav-item {
+  margin-right: 1rem;
+  border-bottom: 2.6px solid transparent;
+  transition: 0.2s all ease-in-out;
+  font-weight: 700;
+}
+nav.navbar .nav-item:hover {
+  border-color: var(--info);
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--info);
+  border-color: var(--info);
+}
+.logo-brand-wrapp {
+  border-right: 2px solid #ddd;
+}
+.navbar .logo {
+  border-radius: 10px;
+}
+.navbar-light .navbar-brand {
+  color: var(--dark);
+}
+@media (max-width: 768px) {
+  .nav-wrapper {
+    height: 56px;
+  }
+  .navbar.hide {
+    transform: translateY(-56px);
+  }
+  .logo-brand-wrapp {
+    border-right: 0;
+  }
+}
+
+/* Footer */
+footer.main-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+footer.main-footer .logo {
+  border-radius: 13px;
+}
+
+/* Spacing */
+.mb-60 {
+  margin-bottom: 60px;
+}
+.pt-35 {
+  padding-top: 35px;
+}
+.pt-60 {
+  padding-top: 60px;
+}
+.pt-70 {
+  padding-top: 70px;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+.pb-30 {
+  padding-bottom: 30px;
+}
+.pb-35 {
+  padding-bottom: 35px;
+}
+.pb-70 {
+  padding-bottom: 70px;
+}
+.pb-95 {
+  padding-bottom: 95px;
+}
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  section[class*="pt-"] {
+    padding-top: 1rem;
+  }
+  section[class*="pb-"] {
+    padding-bottom: 1rem;
+  }
+}

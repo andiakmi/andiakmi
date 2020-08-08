@@ -1,0 +1,11 @@
+header.root-jumbotron .content {
+  min-height: calc(100vh - 58.6px);
+}
+@media (max-width: 768px) {
+  header.root-jumbotron .content .w3-image {
+    display: none;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+}
