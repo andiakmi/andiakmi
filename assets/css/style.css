@@ -33,6 +33,59 @@ a:hover {
   border-top-right-radius: 4px;
 }
 
+.navbar-toggler {
+  padding: 0;
+  border: 0;
+}
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+  width: 40px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-11px);
+}
+.menu-btn__burger::after {
+  transform: translateY(11px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
 /* Component: Button */
 .btn.animate {
   transform: translateY(0);
@@ -45,13 +98,14 @@ a:hover {
 
 /* Component: NavBar */
 .nav-wrapper {
-  height: 58.6px;
+  height: 56px;
+  background: var(--dark);
 }
 .navbar {
   transition: 0.3s transform ease-in-out;
 }
 .navbar.hide {
-  transform: translateY(-58.6px);
+  transform: translateY(-56px);
 }
 nav.navbar {
   background: rgba(255, 255, 255, 0.856);
