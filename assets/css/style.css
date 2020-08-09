@@ -47,6 +47,17 @@ a:hover {
   border-top-right-radius: 4px;
 }
 
+/* Component: Button */
+.btn.animate {
+  transform: translateY(0);
+  transition: 0.2s transform ease, 0.1s box-shadow ease;
+}
+.btn.animate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 3px #0000000e;
+}
+
+/* Component: NavBar */
 .navbar-toggler {
   padding: 0;
   border: 0;
@@ -99,18 +110,6 @@ a:hover {
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
-
-/* Component: Button */
-.btn.animate {
-  transform: translateY(0);
-  transition: 0.2s transform ease, 0.1s box-shadow ease;
-}
-.btn.animate:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 4px 3px #0000000e;
-}
-
-/* Component: NavBar */
 .nav-wrapper {
   height: 56px;
   background: var(--dark);

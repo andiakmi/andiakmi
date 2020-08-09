@@ -1,3 +1,5 @@
+let menuOpen = false;
+
 let lastYPos = 0;
 const nav = document.querySelector("nav.navbar");
 window.addEventListener("scroll", () => {
@@ -5,6 +7,9 @@ window.addEventListener("scroll", () => {
 
   if (yPos > 35.1 && yPos > lastYPos) {
     nav.classList.add("hide");
+    if (menuOpen) {
+      closeMenu();
+    }
   } else {
     nav.classList.remove("hide");
   }
@@ -13,14 +18,21 @@ window.addEventListener("scroll", () => {
 });
 
 const menuBtn = document.querySelector(".menu-btn");
-let menuOpen = false;
+const collapse = document.querySelector(".collapse");
+
+const closeMenu = () => {
+  menuBtn.classList.remove("open");
+  collapse.classList.remove("show");
+  menuOpen = false;
+};
+
 menuBtn.addEventListener("click", () => {
   if (!menuOpen) {
     menuBtn.classList.add("open");
+    collapse.classList.add("show");
     menuOpen = true;
   } else {
-    menuBtn.classList.remove("open");
-    menuOpen = false;
+    closeMenu();
   }
 });
 
@@ -28,7 +40,7 @@ const navLink = document.querySelectorAll(".nav-link");
 for (let i = 0; i < navLink.length; i++) {
   navLink[i].addEventListener("click", () => {
     if (menuOpen) {
-      menuBtn.click();
+      closeMenu();
     }
   });
 }
@@ -44,7 +56,7 @@ let masterTl = gsap.timeline({ repeat: -1 }).pause();
 let boxTl = gsap.timeline();
 
 boxTl
-  .to(".box", { duration: 1, width: "17vw", delay: 0.5, ease: "power4.inOut" })
+  .to(".box", { duration: 1, width: "17vw", delay: 0.3, ease: "power4.inOut" })
   .from(".hi", { duration: 1, y: "7vw", ease: "power3.out" })
   .to(".box", {
     duration: 1,
